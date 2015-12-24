@@ -1,0 +1,9 @@
+language: ruby
+rvm:
+  - 2.2.3
+bundler_args: --binstubs --without production
+script:
+  - bundle exec rubocop
+  - bundle exec rails_best_practices
+  - bin/rake db:migrate RAILS_ENV=test
+  - bin/rake test
