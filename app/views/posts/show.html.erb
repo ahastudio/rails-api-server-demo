@@ -12,3 +12,11 @@
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
+
+<hr>
+
+<ul>
+  <%= render @post.comments %>
+</ul>
+
+<%= render 'comments/form', post: @post %>
